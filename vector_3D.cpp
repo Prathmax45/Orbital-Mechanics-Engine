@@ -28,14 +28,16 @@ vector_3D vector_3D::operator-(vector_3D& other)
     return v;
 }
 
-vector_3D vector_3D::operator*(vector_3D& other)
+vector_3D vector_3D :: operator*(double i)
 {
-    vector_3D v;
-    v.x = this->x * other.x;
-    v.y = this->y * other.y;
-    v.z = this->z * other.z;
-    return v;
+    vector_3D temp;
+    temp.x = this->x * i;
+    temp.y = this->y * i;
+    temp.z = this->z * i;
+    return temp;
+    
 }
+
 
 vector_3D vector_3D::operator/(vector_3D& other)
 {
@@ -45,6 +47,17 @@ vector_3D vector_3D::operator/(vector_3D& other)
     v.z = this->z / other.z;
     return v;
 }
+
+
+double vector_3D:: dot(vector_3D& other)
+{
+    vector_3D v;
+    v.x = this->x * other.x;
+    v.y = this->y * other.y;
+    v.z = this->z * other.z;
+    return v.x + v.y + v.z;
+}
+
 
 void vector_3D :: display()
 {
