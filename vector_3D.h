@@ -3,10 +3,20 @@
 
 class vector_3D
 {
+    double x,y,z;
+
     public:
     vector_3D();
 
-    vector_3D(double x , double y , double z);
+    vector_3D(double x_ , double y_ , double z_);
+
+    vector_3D operator+(vector_3D& other);
+    vector_3D operator-(vector_3D& other);
+    vector_3D operator*(vector_3D& other);
+    vector_3D operator/(vector_3D& other);
+
+    void display();
+
     
 };
 
