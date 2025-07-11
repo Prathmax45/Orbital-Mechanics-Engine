@@ -1,0 +1,20 @@
+OrbitalEngine/
+│
+├── src/
+│   ├── main.cpp         
+│   ├── vector_3D.cpp     
+│   ├── body.cpp         
+│   ├── simulator.cpp    
+│
+├── include/
+│   ├── vector_3D.h      
+│   ├── body.h           
+│   ├── simulator.h       
+│
+├── data/
+│   └── orbit_log.csv    
+│
+├── build/
+│   └── main.exe  
+
+// just an ideal file structure for help in the project development
