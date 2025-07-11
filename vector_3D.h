@@ -3,9 +3,10 @@
 
 class vector_3D
 {
+    public:
+    
     double x,y,z;
 
-    public:
     vector_3D();
 
     vector_3D(double x_ , double y_ , double z_);
@@ -17,6 +18,12 @@ class vector_3D
  
 
     double dot(vector_3D& other);
+    vector_3D cross(vector_3D& other);
+
+    double length();
+    vector_3D normalize();
+
+    
 
     void display();
 
