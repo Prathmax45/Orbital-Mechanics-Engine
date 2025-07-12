@@ -1,28 +1,17 @@
-#include <iostream>
+#include "simulator.h"
+#include "body.h"
 #include "vector_3D.h"
 
-using namespace std;
 
-int main()
-{
-    vector_3D v1;
-    v1.display();
+int main() {
+    simulator s;
+    body earth(5.972e24, vector_3D(1.5e11,0,0), vector_3D(0,29780,0), "Earth");
+    body sun(1.989e30, vector_3D(0,0,0), vector_3D(0,0,0), "Sun");
 
-    vector_3D v2(1,2,3);
-    vector_3D v4(3,5,6);
-    vector_3D v3;
-    v3 = v2 * 4;
-    v3.display();
-    double i = v3 .dot(v2);
-    cout << i << endl;
+    // Sun
+    s.addBody(sun);
+    // Earth
+    s.addBody(earth);
 
-    v3 = v2.cross(v4);
-    v3.display();
-
-    double len = v3.length();
-    cout << len <<endl;
-
-    v4 = v3.normalize();
-    v4.display();
-
+    s.simulate(10000); // 1000 steps of 1 min each
 }
