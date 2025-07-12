@@ -3,13 +3,14 @@
 #include "body.h"
 using namespace std;
 
-body :: body() : mass(1000.0) , velocity(10,10,10) , acceleration(1,1,1) , body_name("untitled") {}
+body :: body() : mass(1000.0) , velocity(10,10,10) ,position(0,0,0) , body_name("untitled") {}
 
-body :: body(double m, vector_3D vel , vector_3D acc , string name)
+body :: body(double m,vector_3D pos, vector_3D vel  , string name)
 {
     mass = m;
+    position = pos;
     velocity = vel;
-    acceleration = acc;
+    
     body_name = name;    
 }
 
@@ -26,12 +27,13 @@ void body :: reset_acceleration ()
     this->acceleration.z = 0;
 }
 
-void body :: display()
+void body :: body_display(ofstream &out)
 {
-    cout << "Object Name = " << body_name << endl;
-    cout << "mass = " << mass << endl;
-    cout << "velocity = " << velocity << endl;
-    cout << "Acceleration = " << acceleration << endl;
+    out << "Object                = " << body_name << endl;
+    out << "Mass                  = " << mass << endl;
+    out << "Position co-ordinates = " << position << endl;
+    out << "Velocity              = " << velocity << endl;
+    out << "Acceleration          = " << acceleration << endl;
 }
 
 
