@@ -6,12 +6,13 @@
 
 class simulator
 {
+    public:
     vector<body> bodies;
     double G;
     double timestep;
     int stepcount;
 
-    public:
+    
     simulator();
 
     void addBody(body other);
