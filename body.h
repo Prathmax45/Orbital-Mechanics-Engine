@@ -15,6 +15,7 @@ class body
     vector_3D velocity;
     vector_3D acceleration;
     string body_name;
+    double KE;
     
     body();
     

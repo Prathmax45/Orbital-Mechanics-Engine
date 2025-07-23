@@ -13,5 +13,5 @@ int main() {
     // Earth
     s.addBody(earth);
 
-    s.simulate(10000); // 1000 steps of 1 min each
+    s.simulate(1000); // 1000 steps of 1 min each
 }
