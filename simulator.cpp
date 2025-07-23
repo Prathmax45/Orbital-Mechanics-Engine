@@ -42,6 +42,7 @@ void simulator :: update_bodies()
     {
         b.velocity = b.velocity +(b.acceleration * timestep);
         b.position = b.position +(b.velocity * timestep);
+        b.KE = b.KE + (0.5 * b.mass * (b.velocity.dot(b.velocity))); 
     }
 }
 
@@ -56,8 +57,10 @@ void simulator :: simulate_steps()
 
 }
 
+
 void simulator :: simulate(int steps)
 {
+    double KE = 0;
     ofstream log("stimulation_log.txt");
 
     for (int i = 0 ; i < steps ; i++)
@@ -65,7 +68,9 @@ void simulator :: simulate(int steps)
             simulate_steps();
             for(body& b : bodies)
                 b.body_display(log);
-            
+            for (body& b : bodies)
+                KE = KE + b.KE;
+            log <<"Total Kinetic Energy  = " << KE << endl;
             log <<"step count = " << stepcount << "  |  Time passed = " << stepcount * timestep / 86400 << " days" << endl;
             log << "--------------------------------------------------------------------------------------------------------" <<endl;
             

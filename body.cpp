@@ -10,8 +10,8 @@ body :: body(double m,vector_3D pos, vector_3D vel  , string name)
     mass = m;
     position = pos;
     velocity = vel;
-    
-    body_name = name;    
+    body_name = name;
+    KE = 0;   
 }
 
 ostream& operator << (ostream& os , vector_3D& other)
