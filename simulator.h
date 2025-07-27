@@ -10,7 +10,7 @@ class simulator
     vector<body> bodies;
     double G;
     double timestep;
-    int stepcount;
+    double stepcount;
 
     
     simulator();
@@ -19,8 +19,7 @@ class simulator
     void calculate_forces();
     void update_bodies();
     void simulate_steps();
-
-    void simulate(int steps);
+    void simulate(double steps);
    
 
 

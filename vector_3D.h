@@ -11,18 +11,18 @@ class vector_3D
 
     vector_3D(double x_ , double y_ , double z_);
 
-    vector_3D operator+(const vector_3D& other);
-    vector_3D operator-(const vector_3D& other);
-    vector_3D operator*( double i);
-    vector_3D operator/(const vector_3D& other);
-    vector_3D div(double other);
+    vector_3D operator+(const vector_3D& other) const;
+    vector_3D operator-(const vector_3D& other) const;
+    vector_3D operator*( double i) const;
+    vector_3D operator/(const vector_3D& other)const;
+    vector_3D div(double other)const;
  
 
-    double dot(const vector_3D& other);
-    vector_3D cross(const vector_3D& other);
+    double dot(const vector_3D& other)const;
+    vector_3D cross(const vector_3D& other)const;
 
-    double length();
-    vector_3D normalize();
+    double length()const ;
+    vector_3D normalize() const ;
 
     
 

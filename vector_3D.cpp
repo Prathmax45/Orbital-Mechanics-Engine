@@ -11,7 +11,7 @@ vector_3D :: vector_3D(double x_ , double y_ , double z_)
     z = z_;
 }
 
-vector_3D vector_3D::operator+(const vector_3D& other)
+vector_3D vector_3D::operator+(const vector_3D& other)const
 {
     vector_3D v;
     v.x = this->x + other.x;
@@ -20,7 +20,7 @@ vector_3D vector_3D::operator+(const vector_3D& other)
     return v;
 }
 
-vector_3D vector_3D::operator-(const vector_3D& other)
+vector_3D vector_3D::operator-(const vector_3D& other)const
 {
     vector_3D v;
     v.x = this->x - other.x;
@@ -29,7 +29,7 @@ vector_3D vector_3D::operator-(const vector_3D& other)
     return v;
 }
 
-vector_3D vector_3D :: operator*(double i)
+vector_3D vector_3D :: operator*(double i) const
 {
     vector_3D temp;
     temp.x = this->x * i;
@@ -40,7 +40,7 @@ vector_3D vector_3D :: operator*(double i)
 }
 
 
-vector_3D vector_3D::operator/(const vector_3D& other)
+vector_3D vector_3D::operator/(const vector_3D& other) const
 {
     vector_3D v;
     v.x = this->x / other.x;
@@ -50,25 +50,21 @@ vector_3D vector_3D::operator/(const vector_3D& other)
 }
 
 
-double vector_3D:: dot(const vector_3D& other)
+double vector_3D:: dot(const vector_3D& other) const
 {
-    vector_3D v;
-    v.x = this->x * other.x;
-    v.y = this->y * other.y;
-    v.z = this->z * other.z;
-    return v.x + v.y + v.z;
+    return (x*other.x + y * other.y + z * other.z);
 }
 
-vector_3D vector_3D :: cross(const vector_3D& other )
+vector_3D vector_3D :: cross(const vector_3D& other ) const
 {
     vector_3D temp;
-    temp.x = (this->y * other.z) + (this->z * other.y);
-    temp.y = (this->z * other.x) + (this->x * other.z);
-    temp.z = (this->x * other.y) + (this->y * other.x);
+    temp.x = (this->y * other.z) - (this->z * other.y);
+    temp.y = (this->z * other.x) - (this->x * other.z);
+    temp.z = (this->x * other.y) - (this->y * other.x);
     return temp;
 }
 
-vector_3D vector_3D :: div(double other)
+vector_3D vector_3D :: div(double other) const
 {
     vector_3D temp;
     temp.x = this->x / other;
@@ -78,12 +74,12 @@ vector_3D vector_3D :: div(double other)
 
 }
 
-double vector_3D :: length()
+double vector_3D :: length() const
 {
     return sqrt(x*x + y*y +z*z);
 }
 
-vector_3D vector_3D :: normalize()
+vector_3D vector_3D :: normalize() const
 {
     vector_3D temp;
     temp.x = this->x / this->length();

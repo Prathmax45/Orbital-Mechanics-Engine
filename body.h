@@ -16,6 +16,7 @@ class body
     vector_3D acceleration;
     string body_name;
     double KE;
+    double PE;
     
     body();
     
@@ -24,7 +25,7 @@ class body
     void body_display(ofstream &out);
     void reset_acceleration();
 
-    friend ostream& operator<<(ostream& os , vector_3D& other);
+    friend ostream& operator<<(ostream& os ,const vector_3D& other);
     
 
     
