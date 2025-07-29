@@ -14,12 +14,9 @@ int main() {
     "Moon"
 );
 
- s.addBody(moon);
-
-    // Sun
+    s.addBody(moon);
     s.addBody(sun);
-    // Earth
     s.addBody(earth);
 
-    s.simulate(525600.0); // 100000 steps of 1 min each
+    s.simulate(525600.0); //  60 sec timestep
 }

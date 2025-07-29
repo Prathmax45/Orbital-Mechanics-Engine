@@ -122,7 +122,7 @@ void simulator :: simulate(double steps)
             if (i == 0.0)
             initial_state = KE + PE;
            
-            Total_Energy = KE + PE;
+            Total_Energy = KE + PE; //
             
             
 

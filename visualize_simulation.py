@@ -21,7 +21,7 @@ buffer = 0.2 * df[['x', 'y']].abs().max().max()
 ax.set_xlim(df['x'].min() - buffer, df['x'].max() + buffer)
 ax.set_ylim(df['y'].min() - buffer, df['y'].max() + buffer)
 
-scatters = {}
+scatters = {} 
 trails = {}
 for body in bodies:
     scatters[body], = ax.plot([], [], 'o', color=colors[body], label=body)
