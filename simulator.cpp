@@ -6,7 +6,7 @@
 
 using namespace std;
 
-simulator :: simulator() :  G(6.67430e-11), timestep(10.0),stepcount(0.0){}
+simulator :: simulator() :  G(6.67430e-11), timestep(60.0),stepcount(0.0){}
 
 void simulator :: addBody(body other)
 {
@@ -56,7 +56,7 @@ void simulator :: update_bodies()
     {
         b.velocity = b.velocity +( b.acceleration * timestep * 0.5);
         b.KE =(0.5 * b.mass * (b.velocity.dot(b.velocity)));
-        b.position = b.position +(b.velocity * timestep);
+        
     }
     for (int i = 0 ; i < bodies.size() ; i++)
     {
@@ -94,7 +94,8 @@ void simulator :: simulate(double steps)
     
     double Total_Energy = 0;
     double initial_state = 0;
-    
+    std::ofstream csv("positions.csv");
+    csv << "step,body,x,y,z\n";
     ofstream log("stimulation_log.txt");
     log.precision(10);
     log.setf(ios :: scientific);
@@ -107,7 +108,10 @@ void simulator :: simulate(double steps)
         double PE = 0.0;
             simulate_steps();
             for(body& b : bodies)
+            {
                 b.body_display(log);
+                csv << i << "," << b.body_name << "," << b.position.x << "," << b.position.y << "," << b.position.z << "\n";
+            }
             for (body& b : bodies)
             {
                 KE = KE + b.KE;
@@ -133,5 +137,6 @@ void simulator :: simulate(double steps)
           
     }
     log.close();
+    csv.close();
 }
 
