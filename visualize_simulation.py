@@ -51,7 +51,7 @@ def update(frame):
     return list(scatters.values()) + list(trails.values())
 
 
-ani = FuncAnimation(
+ani = FuncAnimation( 
     fig, update,
     frames=frames,
     interval=50,  # ms per frame (smaller = faster)
