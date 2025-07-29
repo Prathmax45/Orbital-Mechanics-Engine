@@ -47,7 +47,7 @@ def update(frame):
             trail_data[body]['x'].append(x)
             trail_data[body]['y'].append(y)
             trails[body].set_data(trail_data[body]['x'], trail_data[body]['y'])
-
+ 
     return list(scatters.values()) + list(trails.values())
 
 

@@ -18,5 +18,5 @@ int main() {
     s.addBody(sun);
     s.addBody(earth);
 
-    s.simulate(525600.0); //  60 sec timestep
+    s.simulate(525600.0); //  60 sec timestep 
 }
